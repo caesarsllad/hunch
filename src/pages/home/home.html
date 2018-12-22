@@ -1,18 +1,57 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="dark">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title center><img src="http://www.hunch-app.com/app/layout/img/logo.png" height="20px"> HUNCH</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+<ion-content>
+  <ion-list>
+    <ion-card *ngFor="let item of items">
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="{{item.JOGA_PATH_AVATAR}}">
+        </ion-avatar>
+        <h2>{{item.JOGA_NOME}}</h2>
+        <p>@{{item.JOGA_ALIAS}}</p>
+      </ion-item>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+      <!--<img src="img/advance-card-bttf.png"> -->
+      <ion-card-content>
+        <ion-row>
+          <ion-col>
+            <button ion-button clear>
+            <ion-icon name="thumbs-up"><div>{{item.PAYOFF_SIM}}</div></ion-icon>
+          </button>
+          </ion-col>
+          <ion-col col-5 text-align="right" background-color="#f0f5ff">
+            <p>{{item.ENTE_ENQUETE}}</p>
+          </ion-col>
+          <ion-col>
+            <button ion-button clear>
+            <ion-icon name="thumbs-down"><div>{{item.PAYOFF_NAO}}</div></ion-icon>
+          </button>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+      <ion-row>
+        <ion-col>
+          <font size="-2" *ngFor="let hashtag of item.HASH_TAGS">
+            {{hashtag.HASH_TAGS}}
+          </font>
+        </ion-col>  
+        <ion-col center text-center col-4>
+         
+          <ion-note>
+            <div>
+              Expires: <div>{{item.ENTE_DT_EXPIRACAO | date:'mediumDate'}}</div>
+            </div>
+          </ion-note>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </ion-list>
 </ion-content>
