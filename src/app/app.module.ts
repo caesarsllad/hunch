@@ -6,6 +6,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { ExplorePage } from '../pages/explore/explore';
+import { TrendingPage } from '../pages/trending/trending';
+import { RecFriendsPage } from '../pages/rec-friends/rec-friends';
+import { RecInfluencersPage } from '../pages/rec-influencers/rec-influencers';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -14,18 +18,28 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    ExplorePage,
+    TrendingPage,
+    RecFriendsPage,
+    RecInfluencersPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp, {
+      tabsPlacement: 'top'}
+      ),
     HttpClientModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    ExplorePage,
+    TrendingPage,
+    RecFriendsPage,
+    RecInfluencersPage
   ],
   providers: [
     StatusBar,

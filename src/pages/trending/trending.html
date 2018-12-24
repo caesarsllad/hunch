@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title center><img src="http://www.hunch-app.com/app/layout/img/logo.png" height="20px"> Hunch</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <div text-center><h2>Trending Topics</h2></div>
+  <ion-list>
+  	<ion-item *ngFor="let item of items">
+  		#{{item.HTAG_NOME_HASHTAG}}
+  		<ion-note item-end>{{item.NUM_PREVISOES}}</ion-note>
+  	</ion-item>
+  </ion-list>
+</ion-content>

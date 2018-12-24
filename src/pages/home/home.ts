@@ -3,9 +3,12 @@ import { NavController } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 
+
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
+
 })
 export class HomePage {
 
@@ -17,7 +20,7 @@ hunchList : Observable<any>;
 	 this.hunchList.subscribe(result => {
 	 	this.items = result;
 	 	console.log(this.items);
-	 })
+	 });
 
 	 //this.http.get('http://52.54.158.109/wbs/prevrec/8c9859c4069b7d58ec4810a83521ac45/1', {}, {})
 	 // .then(data => {

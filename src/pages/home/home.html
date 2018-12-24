@@ -3,11 +3,12 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title center><img src="http://www.hunch-app.com/app/layout/img/logo.png" height="20px"> HUNCH</ion-title>
+    <ion-title center><img src="http://www.hunch-app.com/app/layout/img/logo.png" height="20px"> Hunch</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
+  <div text-center><h2>Recommended Predictions</h2></div>
   <ion-list>
     <ion-card *ngFor="let item of items">
       <ion-item>
@@ -21,13 +22,15 @@
       <!--<img src="img/advance-card-bttf.png"> -->
       <ion-card-content>
         <ion-row>
+          <ion-col text-align="right" background-color="#f0f5ff">
+            <p>{{item.ENTE_ENQUETE}}</p>
+          </ion-col>
+        </ion-row>
+        <ion-row class="botoes">
           <ion-col>
             <button ion-button clear>
             <ion-icon name="thumbs-up"><div>{{item.PAYOFF_SIM}}</div></ion-icon>
-          </button>
-          </ion-col>
-          <ion-col col-5 text-align="right" background-color="#f0f5ff">
-            <p>{{item.ENTE_ENQUETE}}</p>
+            </button>
           </ion-col>
           <ion-col>
             <button ion-button clear>
@@ -36,7 +39,6 @@
           </ion-col>
         </ion-row>
       </ion-card-content>
-
       <ion-row>
         <ion-col>
           <font size="-2" *ngFor="let hashtag of item.HASH_TAGS">
